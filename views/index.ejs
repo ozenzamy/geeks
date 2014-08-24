@@ -1,0 +1,40 @@
+<%include partials/head%>
+ 
+
+ <div class="row" id="division">
+  <div class="small-5 small-centered large-centered columns">
+   <center><h3>Geek<br /><small>The community of coders</small></h3></center>
+  </div>
+ 
+  <div class="row">
+   <div class="small-5 small-centered large-centered columns">
+    <a class="button expand radius" href="#" data-reveal-id="loginModal" id="loginBTN">Connexion</a>
+   </div>
+  </div>
+  <div class="row">
+   <div class="small-5 small-centered large-centered columns">
+    <a class="button expand radius" href="#" data-reveal-id="registerModal" id="registerBTN">Inscription</a>
+   </div>
+  </div>
+ </div>
+ 
+
+ <script type="text/javascript">
+  $('#loginBTN').click(function(event){
+    event.preventDefault();
+    $('#loginModal').foundation('reveal', 'open');
+  });
+
+  $('#registerBTN').click(function(event){
+    event.preventDefault();
+    $('#registerModal').foundation('reveal', 'open');
+  });
+
+  var height = $( window  ).height()/2;
+      height = height - $('#division').height() / 2 + 'px';
+      $('#division').css('padding-top',height);
+ </script>
+
+ <%include partials/widget/loginModal%>
+ <%include partials/widget/registerModal%>
+<%include partials/foot%>
