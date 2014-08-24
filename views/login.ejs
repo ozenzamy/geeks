@@ -1,3 +1,39 @@
 <%include partials/head%>
+  <div class="row" id="division">
+   <div class="small-5 small-centered large-centered columns">
+    <center><h3>Connexion <small>Geek</small></h3></center><hr />
+    <div data-alert class="alert-box alert ">
+     Votre nom d'utilisateur ou votre mot de passe est invalide !
+     <a href="#" class="close">&times;</a>
+    </div>
+   </div>
+   <form action="#" method="POST">
+   <div class='row'>
+    <div class="small-5 small-centered large-centered columns">
+     <label>Nom d'utilisateur / Addresse éléctronique
+      <input type="text" name="username" />
+     </label>
+    </div>
+   </div>
+   <div class="row">
+    <div class="small-5 small-centered large-centered columns">
+     <label> Mot de passe
+      <input type="password" name="password" />
+     </label>
+    </div>
+   </div>
+   <div class="row">
+    <div class="small-4 small-centered large-centered columns">
+     <button type="submit" class="button expand radius">Connexion</button>
+    </div>
+   </div>
+  </form>
+  </div>
+
+<script type="text/javascript">
+ var height = $(window).height() / 2;
+     height = height - $('#division').height()/2 + "px";
+     $("#division").css('padding-top', height);
+</script>
  
 <%include partials/foot%>
