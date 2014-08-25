@@ -18,7 +18,18 @@ router.post('/', function(req, res){
  var sexe = req.body.sexe;
  var email = (validator.isEmail(req.body.email)) ? req.body.email : false; 
  var password = (req.body.password.length >= 6) ? md5(req.body.password) : false;
- 
+ if(!firstname){
+  res.send('Le nom doit etre composé de 6 caracteres et plus');
+ }
+ if(!lastname){
+  res.send('Le prenom est invalide doit etre composé de 6 caractere et plus');
+ }
+ if(!email){
+  res.send('Email Invalide');
+ }
+ if(!password){
+  res.send('Mot de passe doit etre composé de 6 caractere et plus');
+ } 
 });
 
 module.exports = router;
