@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-
+var userSchema = require('../models/user');
 
 /* POST login Page */
 router.post('/', function(req, res){
