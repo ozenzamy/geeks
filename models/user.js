@@ -12,4 +12,4 @@ var userSchema = new Schema({
  active: Number, 
 });
 
-module.exports = mongoose.model('User', userSchema);
+exports.user = mongoose.model('User', userSchema);

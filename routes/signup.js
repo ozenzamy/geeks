@@ -2,9 +2,9 @@ var express = require('express');
 var router  = express.Router();
 var validator = require('validator');
 var md5 = require('MD5');
-var userModel = require('../models/user'); 
-
-
+var mongoose = require('mongoose');
+var userModel = require('../models/user');
+    
 /*GET signup Page*/
 
 router.get('/', function(req, res){
@@ -13,6 +13,8 @@ router.get('/', function(req, res){
 
 
 router.post('/', function(req, res){
+ 
+ var user = new  userModel.user();
  var firstname = (req.body.firstname.length > 2) ? req.body.firstname : false;
  var lastname = (req.body.lastname.length > 2) ? req.body.lastname : false;
  var sexe = req.body.sexe;
@@ -29,7 +31,17 @@ router.post('/', function(req, res){
  }
  if(!password){
   res.send('Mot de passe doit etre composé de 6 caractere et plus');
- } 
+ }
+
+ //Check exist email :
+  user.find({email: email}, function(data){
+   if(data){
+    res.send('Exists'); 
+   }
+   else{
+    res.send('Don\'t exists');
+   }
+  });
 });
 
 module.exports = router;
