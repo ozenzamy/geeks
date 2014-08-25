@@ -1,0 +1,60 @@
+<%include partials/head%>
+ <div class="row" id="division">
+  <div class="small-5 small-centered large-centered columns">
+   <center><h3>Inscription <small>Geek</small></h3></center>
+   <hr />
+  </div>
+  <form action="signup" method="post">
+   <div class="row">
+    <div class="small-5 small-centered large-centered columns">
+     <label>Nom de famille
+      <input type="text" name="firstname" />
+     </label>
+    </div>
+   </div>
+   <div class="row">
+    <div class="small-5 small-centered large-centered columns">
+     <label>Prénom
+      <input type="text" name="lastname" />
+     </label>
+    </div>
+   </div>
+   <div class="row">
+    <div class="small-5 small-centered large-centered columns">
+     <label>Sexe
+      <select name="sexe">
+       <option value="homme">Homme</option>
+       <option value="Femme">Femme</option>
+      </select>
+     </label>
+    </div>
+   </div>
+   <div class="row">
+    <div class="small-5 small-centered large-centered columns">
+     <label>Adresse éléctronique
+      <input type="text" name="email" placeholder="Example@Example.com" />
+     </label>
+    </div>
+   </div>
+   <div class="row">
+    <div class="small-5 small-centered large-centered columns">
+     <label>Mot de passe
+      <input type="password" name="password" />
+     </label>
+    </div>
+   </div>
+   <div class="row">
+    <div class="small-5 small-centered large-centered columns">
+     <button class="button radius expand" type="submit">S'inscrire</button>
+    </div>
+   </div>
+  </form>
+ </div>
+
+ <script type="text/javascript">
+  var height = $( window ).height() / 2;
+      height = height - $('#division').height()/2 + "px";
+      $('#division').css('padding-top', height); 
+ </script>
+
+<%include partials/foot%>
